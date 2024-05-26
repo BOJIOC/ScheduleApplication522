@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ScheduleActivity">
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:text="выйти"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:baselineAligned="false"
+        android:text="Расписание на неделю"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*">
+
+        <!-- Table row for header -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#E0E0E0"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="1 пара"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#E0E0E0"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="2 пара"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#E0E0E0"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="3 пара"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <!-- Table row for Monday -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F5F5F5"
+                android:padding="8dp"
+                android:text="ПН\nинформатика\nауд. 345"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#F5F5F5"
+                android:padding="8dp"
+                android:text="литература\nауд. 360"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#F5F5F5"
+                android:padding="8dp"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <!-- Table row for Tuesday -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#E0E0E0"
+                android:padding="8dp"
+                android:text="ВТ\nматематика\nауд. 429"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#E0E0E0"
+                android:padding="8dp"
+                android:text="математика\nауд. 429"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#E0E0E0"
+                android:padding="8dp"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <!-- Table row for Wednesday -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F5F5F5"
+                android:padding="8dp"
+                android:text="СР\n"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F5F5F5"
+                android:padding="8dp"
+                android:text="география\nауд. 248"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F5F5F5"
+                android:padding="8dp"
+                android:text="история\nауд. 268"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <!-- Table row for Thursday -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#E0E0E0"
+                android:padding="8dp"
+                android:text="ЧТ\nматематика\nауд. 429"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#E0E0E0"
+                android:padding="8dp"
+                android:text="русский язык\nауд. 360"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#E0E0E0"
+                android:padding="8dp"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <!-- Table row for Friday -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F5F5F5"
+                android:padding="8dp"
+                android:text="ПТ\nрусский язык\nауд. 360"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#F5F5F5"
+                android:padding="8dp"
+                android:text="литература\nауд. 360"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#F5F5F5"
+                android:padding="8dp"
+                android:text="информатика\nауд. 345"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <!-- Table row for Saturday -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#E0E0E0"
+                android:padding="8dp"
+                android:text="СБ\nматематика\nауд. 429"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#E0E0E0"
+                android:padding="8dp"
+                android:text="общество\nауд. 268"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#E0E0E0"
+                android:padding="8dp"
+                android:textColor="@android:color/black" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
