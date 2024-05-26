@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -22,12 +21,13 @@ class MainActivity : AppCompatActivity() {
             val username = etUsername.text.toString()
             val password = etPassword.text.toString()
 
-            // Проверка данных из БД (здесь упрощенная версия)
             if (username == "user" && password == "password") {
-                val intent = Intent(this, WelcomeActivity::class.java)
-                intent.putExtra("USERNAME", username)
+                val intent = Intent(this, WelcomeActivity::class.java).apply {
+                    putExtra("USERNAME", username)
+                }
                 startActivity(intent)
             } else {
+                tvError.text = "Ошибка авторизации"
                 tvError.visibility = TextView.VISIBLE
             }
         }
