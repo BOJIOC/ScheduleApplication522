@@ -11,13 +11,9 @@ class ScheduleActivity : AppCompatActivity() {
         setContentView(R.layout.activity_schedule)
 
         val btnLogout = findViewById<Button>(R.id.btnLogout)
-
         btnLogout.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish()
         }
-
-        // Здесь добавьте логику для отображения расписания из базы данных, если это необходимо
     }
 }

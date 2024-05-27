@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".ScheduleActivity">
 
@@ -12,218 +12,338 @@
         android:id="@+id/btnLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
+        android:text="ВЫЙТИ"
         android:backgroundTint="@android:color/holo_red_light"
-        android:text="выйти"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
     <TextView
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:baselineAligned="false"
+        android:layout_marginTop="16dp"
         android:text="Расписание на неделю"
         android:textColor="@android:color/black"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLogout" />
+
+    <TextView
+        android:id="@+id/tvDateRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20 мая - 26 мая"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:stretchColumns="*">
+        android:stretchColumns="1,2,3"
+        app:layout_constraintTop_toBottomOf="@id/tvDateRange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
 
-        <!-- Table row for header -->
         <TableRow>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#E0E0E0"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:background="@drawable/cell_border"
                 android:gravity="center"
-                android:padding="8dp"
+                android:padding="15dp"
+                android:text=" " />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="1 пара"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#E0E0E0"
+                android:textSize="16sp"
                 android:gravity="center"
-                android:padding="8dp"
+                android:padding="15dp"
+                android:background="@drawable/cell_border"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="2 пара"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#E0E0E0"
+                android:textSize="16sp"
                 android:gravity="center"
-                android:padding="8dp"
+                android:padding="15dp"
+                android:background="@drawable/cell_border"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="3 пара"
-                android:textColor="@android:color/black" />
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="15dp"
+                android:background="@drawable/cell_border"/>
         </TableRow>
 
-        <!-- Table row for Monday -->
+        <!-- Monday -->
         <TableRow>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell_border"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="ПН"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="#F5F5F5"
-                android:padding="8dp"
-                android:text="ПН\nинформатика\nауд. 345"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="#F5F5F5"
-                android:padding="8dp"
-                android:text="литература\nауд. 360"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="#F5F5F5"
-                android:padding="8dp"
-                android:textColor="@android:color/black" />
-        </TableRow>
-
-        <!-- Table row for Tuesday -->
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#E0E0E0"
-                android:padding="8dp"
-                android:text="ВТ\nматематика\nауд. 429"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="#E0E0E0"
-                android:padding="8dp"
-                android:text="математика\nауд. 429"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="#E0E0E0"
-                android:padding="8dp"
-                android:textColor="@android:color/black" />
-        </TableRow>
-
-        <!-- Table row for Wednesday -->
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#F5F5F5"
-                android:padding="8dp"
-                android:text="СР\n"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#F5F5F5"
-                android:padding="8dp"
-                android:text="география\nауд. 248"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#F5F5F5"
-                android:padding="8dp"
-                android:text="история\nауд. 268"
-                android:textColor="@android:color/black" />
-        </TableRow>
-
-        <!-- Table row for Thursday -->
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#E0E0E0"
-                android:padding="8dp"
-                android:text="ЧТ\nматематика\nауд. 429"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="#E0E0E0"
-                android:padding="8dp"
-                android:text="русский язык\nауд. 360"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="#E0E0E0"
-                android:padding="8dp"
-                android:textColor="@android:color/black" />
-        </TableRow>
-
-        <!-- Table row for Friday -->
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#F5F5F5"
-                android:padding="8dp"
-                android:text="ПТ\nрусский язык\nауд. 360"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="#F5F5F5"
-                android:padding="8dp"
-                android:text="литература\nауд. 360"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="#F5F5F5"
-                android:padding="8dp"
+                android:layout_weight="1"
                 android:text="информатика\nауд. 345"
-                android:textColor="@android:color/black" />
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="15dp"
+                android:background="@drawable/cell_border"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="литература\nауд. 360"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="15dp"
+                android:background="@drawable/cell_border"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell_border"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text=" "
+                android:textSize="16sp" />
         </TableRow>
 
-        <!-- Table row for Saturday -->
+        <!-- Tuesday -->
         <TableRow>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell_border"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="ВТ"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="#E0E0E0"
-                android:padding="8dp"
-                android:text="СБ\nматематика\nауд. 429"
-                android:textColor="@android:color/black" />
+                android:layout_weight="1"
+                android:text="математика\nауд. 429"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="15dp"
+                android:background="@drawable/cell_border"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="математика\nауд. 429"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="15dp"
+                android:background="@drawable/cell_border"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="#E0E0E0"
-                android:padding="8dp"
-                android:text="общество\nауд. 268"
-                android:textColor="@android:color/black" />
+                android:layout_weight="1"
+                android:background="@drawable/cell_border"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text=" "
+                android:textSize="16sp" />
+        </TableRow>
+
+        <!-- Wednesday -->
+        <TableRow>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="#E0E0E0"
-                android:padding="8dp"
-                android:textColor="@android:color/black" />
+                android:layout_weight="1"
+                android:background="@drawable/cell_border"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="СР"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell_border"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text=" "
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="география\nауд. 248"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="15dp"
+                android:background="@drawable/cell_border"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell_border"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="история\nауд. 268"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <!-- Thursday -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell_border"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="ЧТ"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="математика\nауд. 429"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="15dp"
+                android:background="@drawable/cell_border"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="русский язык\nауд. 360"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="15dp"
+                android:background="@drawable/cell_border"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell_border"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text=" "
+                android:textSize="16sp" />
+        </TableRow>
+
+        <!-- Friday -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell_border"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="ПТ"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="русский язык\nауд. 360"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="15dp"
+                android:background="@drawable/cell_border"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="литература\nауд. 360"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="15dp"
+                android:background="@drawable/cell_border"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="информатика\nауд. 345"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="15dp"
+                android:background="@drawable/cell_border"/>
+        </TableRow>
+
+        <!-- Saturday -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell_border"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="СБ"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="математика\nауд. 429"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="15dp"
+                android:background="@drawable/cell_border"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="обществознание\nауд. 268"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:padding="15dp"
+                android:background="@drawable/cell_border"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell_border"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text=" "
+                android:textSize="16sp" />
         </TableRow>
     </TableLayout>
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,11 +16,10 @@ class WelcomeActivity : AppCompatActivity() {
         val tvWelcome = findViewById<TextView>(R.id.tvWelcome)
         tvWelcome.text = "Здравствуйте, $username!"
 
-        // Автоматический переход через 3 секунды
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, ScheduleActivity::class.java)
             startActivity(intent)
             finish()
-        }, 3000) // 3000 миллисекунд = 3 секунды
+        }, 3000)
     }
 }
